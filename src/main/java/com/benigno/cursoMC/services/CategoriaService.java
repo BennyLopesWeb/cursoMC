@@ -16,12 +16,10 @@ public class CategoriaService {
 	private CategoriaRepository repo;
 	
 	public Optional<Categoria> buscar(Integer id) {
+		
 		Optional<Categoria> obj = repo.findById(id);
-		if(obj == null) {
-			throw new ObjectNotFoundException("Objeto não encotrado! Id:  " +  id
-					+ ", Tipo:  "  +  Categoria.class.getName());
-		}
-		return obj;
+		return Optional.ofNullable(obj.orElseThrow(() -> new ObjectNotFoundException(
+				"Objeto não encontrado! Id: " + id + ", Tipo: " + Categoria.class.getName())));
 
 	}
 }
