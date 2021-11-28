@@ -59,17 +59,35 @@ public class CursoMcApplication  implements CommandLineRunner {
 		
 		Estado est1 = new Estado (null,  "Minas Gerais");
 		Estado est2 = new Estado (null,  "São Paulo");
+		Estado est3 = new Estado(null, "Santa Catarina");
+		Estado est4 = new Estado(null, "Parana");
+		Estado est5 = new Estado(null, "Rio Grande do Sul");
+		Estado est6 = new Estado(null, "Rio de Janeiro");
+		Estado est7 = new Estado(null, "Pernambuco");
 		
 		Cidade cid1 = new Cidade(null, "Uberlandia", est1);
 		Cidade cid2 = new Cidade(null, "São Paulo", est2);
 		Cidade cid3 = new Cidade(null, "Campinas", est2);
+		Cidade cid4 = new Cidade(null, "Florianópollis", est3);
+		Cidade cid5= new Cidade(null, "Curutiba", est4);
+		Cidade cid6= new Cidade(null, "Joinville", est3);
+		Cidade cid7= new Cidade(null, "Maringa", est4);
+		Cidade cid8= new Cidade(null, "Rio Janeiro", est6);
+		Cidade cid9= new Cidade(null, "Porto Alegre", est5);
+		Cidade cid10= new Cidade(null, "Recife", est7);
+		Cidade cid11= new Cidade(null, "Niteroi", est6);
 		
 		est1.getCidades().addAll(Arrays.asList(cid1));
 		est2.getCidades().addAll(Arrays.asList(cid2, cid3));
+		est3.getCidades().addAll(Arrays.asList(cid4, cid6));
+		est4.getCidades().addAll(Arrays.asList(cid5, cid7));
+		est5.getCidades().addAll(Arrays.asList(cid9));
+		est6.getCidades().addAll(Arrays.asList(cid8, cid11));
+		est7.getCidades().addAll(Arrays.asList(cid10));
 		
-		estadoRepository.saveAll( Arrays.asList(est1, est2));
+		estadoRepository.saveAll( Arrays.asList (est1, est2,est3, est4, est5, est6, est7));
 		
-		cidadeRepository.saveAll (Arrays.asList (cid1, cid2, cid3));
+		cidadeRepository.saveAll (Arrays.asList (cid1, cid2, cid3, cid4, cid5, cid6, cid7, cid8, cid9, cid10, cid11));
 		
 	}
 
